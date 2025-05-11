@@ -42,7 +42,7 @@
 
 
   <div  class="overflow-y-auto flex-grow ">
-      <div class="card" v-for="it in draw" :key="it.id">
+      <div class="card " v-for="it in draw" :key="it.id" >
         <img :src="it.imageUrl" class="img-home" alt="Изображение товара" />
         <p class="name-home">{{ it.title }}</p>
         <p class="price-home">{{ it.price }} рублей</p> <!--  Отображаем отформатированную цену -->

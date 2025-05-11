@@ -52,7 +52,7 @@
 
   </div>
 
-  <div class="grid grid-cols-3">
+  <div class="flex flex-wrap">
 
 
 

@@ -1,9 +1,9 @@
 <template>
 
-<div class="modalcall animate__animated animate__fadeInDown" v-if="this.$store.state.OpenModalCall">
+<div class="modalcall animate__animated animate__fadeInDown p-6" v-if="this.$store.state.OpenModalCall">
 
 
-    <div class="close-modal" @click="CloseModal()">X</div>
+   
 
 
     
@@ -14,16 +14,18 @@
 
             
         <p class="username">Введите ваше имя</p>
-        <input type="text" name="Имя" class="input-name" required>
+        <input type="text" name="Имя" class="input pl-10" placeholder="Имя" required>
         <p class="user-info">Введите суть вашего вопроса</p>
-        <input type="text" name="Тема" class="input-info" required><br>
+        <input type="text" name="Тема" class="input pl-10" placeholder="Тема" required><br>
        
-
+        <p class="text-3xl">Введите номер телефона</p>
+        <input type="number" name="Номер телефона" class="input pl-10" required placeholder="+ 7 999 000"><br>
        
        
     
 
-        <button type="submit" class="button-form">Отправить</button>
+        <button type="submit" class="button d-inline w-40 h-10 bg-orange-300 rounded-md cursor-pointer mt-10 mr-10 hover:bg-orange-400 transition">Отправить</button>
+        <button  class="button d-inline w-40 h-10 rounded-md cursor-pointer transition bg-gray-400 hover:bg-gray-600"  @click="CloseModal()">Закрыть</button>
 
         </form>
 
@@ -54,10 +56,12 @@ export default{
 
 .modalcall{
     position: fixed;
-    width: 36vw;
-    height: 45vh;
+    width: 30%;
+    
     border-radius: 20px;
-    background-color: #cfcfcfc9;
+    background-color: #fff;
+    
+    box-shadow: 4px 15px 59px 15px rgba(34, 60, 80, 0.27);
     left: 30vw;
     top: 250px;
     
@@ -86,10 +90,10 @@ form{
     font-weight: 600;
 }
 
-.input-name{
+.input{
     width: 20vw;
     height: 5vh;
-    border: none;
+    border: 1px solid;
     margin-left: 10px;
     border-radius: 5px;
 }
@@ -101,32 +105,25 @@ form{
 }
 
 
-.input-info{
-    width: 20vw;
-    height: 5vh;
-    border: none;
-    margin-left: 10px;
-    border-radius: 5px;
+
+
+
+
+@media (max-width:1500px) {
+    .modalcall{
+        width: 55vw;
+        padding: 20px;
+    }
+
+    .input{
+        width: 37vw;
+    }
+
+    .button{
+        margin-top: 10px;
+        
+
+    }
 }
-
-
-.button-form{
-    border: none;
-    
-    margin-top: 20px;
-    width: 168px;
-    height: 44px;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    font-weight: 500;
-    border-radius: 6px;
-    margin-left:32px ;
-    background-color:#FFA400 ;
-    cursor: pointer;
-}
-
 
 </style>
