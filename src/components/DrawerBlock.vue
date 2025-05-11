@@ -22,11 +22,30 @@
 
   </div>
 
-  <div class="overflow-y-auto flex-grow">
+<div v-if="this.$store.state.basket.length === 0" >
+
+    
+
+  <div class="flex justify-center items-center mt-30">
+    <img src="/img/draw.svg" alt="" >
+  </div>
+  <p class="text-center text-2xl font-bold">Корзина пустая</p>
+  <p class="text-center mt-2 font-normal">Добавьте хотя бы одну пару <br> кроссовок, чтобы сделать заказ.</p>
+  <div class="flex items-center justify-center mt-6 w-3xs h-12 bg-lime-300 cursor-pointer  rounded-md ml-8 hover:bg-lime-400 transition" @click="closeDrawer"> <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="currentColor" class="rotate-180 mr-4 " viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+    </svg>Вернуться назад</div>
+  
+ 
+
+</div>
+
+
+  <div  class="overflow-y-auto flex-grow ">
       <div class="card" v-for="it in draw" :key="it.id">
         <img :src="it.imageUrl" class="img-home" alt="Изображение товара" />
         <p class="name-home">{{ it.title }}</p>
-        <p class="price-home">{{ it.price }}</p> <!--  Отображаем отформатированную цену -->
+        <p class="price-home">{{ it.price }} рублей</p> <!--  Отображаем отформатированную цену -->
 
         <!-- Блок управления количеством -->
         <div class="flex items-center justify-between mt-2">
@@ -48,7 +67,7 @@
 
 
 
-    <b>Сумма: {{ sum }}$</b>
+    <b>Сумма: {{ sum }} рублей</b>
 
     
     <div class=" w-50 h-10 flex justify-around items-center cursor-pointer  bg-lime-300  rounded-md mt-6 hover:bg-lime-400 transition ">Оформить заказ <svg xmlns="http://www.w3.org/2000/svg"  width="20" height="20" fill="currentColor" class="" viewBox="0 0 16 16">
@@ -93,15 +112,19 @@ export default{
 
       AddToDrawer(it){
         it.quantity++;
+        this.$store.state.counter++
         this.$store.state.totalSum+= it.price;
       },
 
       DeleteToDrawer(it){
         if(it.quantity > 1){
+
           this.$store.state.totalSum-= it.price
           it.quantity--;
+          this.$store.state.counter--;
         }
         else{
+          this.$store.state.counter--;
           this.$store.state.totalSum-= it.price;
           this.$store.state.basket = this.$store.state.basket.filter( i=> i.id !== it.id);
         }

@@ -5,7 +5,7 @@
     <LogoBlock/>
 
     <nav>
-      <router-link to="/" class="itemHeader">Главная</router-link> 
+      <!-- <router-link to="/" class="itemHeader">Главная</router-link>  -->
       <!-- <router-link to="/basket" class="itemHeader">Basket</router-link>  -->
       
       
@@ -20,7 +20,10 @@
 
 </div>
 
+
+
 <router-view/>
+
 </template>
 
 <script>

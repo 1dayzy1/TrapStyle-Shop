@@ -24,11 +24,11 @@
 
   
 
-  <div class="container flex justify-around items-center bg-cover w-full h-screen bg-center ">
+  <!-- <div class="container flex justify-around items-center  w-full h-screen  bg-cover ">
 
     <HomeLand />
 
-  </div>
+  </div> -->
 
   
 
@@ -85,7 +85,7 @@
 import CardBlock from '@/components/CardBlock.vue';
 import CardDesc from '@/components/CardDesc.vue';
 import DrawerBlock from '@/components/DrawerBlock.vue';
-import HomeLand from '@/components/HomeLand.vue';
+// import HomeLand from '@/components/HomeLand.vue';  
 import ModalCall from '@/components/ModalCall.vue';
 import NotificationBlock from '@/components/NotificationBlock.vue';
 // import SliderBlock from '@/components/SliderBlock.vue';
@@ -98,7 +98,7 @@ import { ref, onMounted, watch } from 'vue';
 export default {
   name: 'HomeView',
   components: {
-    HomeLand,CardBlock,CardDesc,NotificationBlock,ModalCall,DrawerBlock
+    CardBlock,CardDesc,NotificationBlock,ModalCall,DrawerBlock
   },
 
  
@@ -179,6 +179,10 @@ export default {
 
 .container{
   background-image: url('../assets/img/bgimage.png');
+  width: 100%;
+  
+  background-size: cover;
+  
 }
 
 

@@ -31,7 +31,7 @@
                 
                 <p class="text-center">{{it.title }}</p>
                 
-                <p class="text-center font-bold mt-4">Цена:{{ it.price }}</p>
+                <p class="text-center font-bold mt-4">Цена:{{ it.price }} рублей</p>
 
                 <p v-if="productQuant" class="text-center text-lg    font-bold">У вас в корзине:{{ productQuant }}</p>
 
