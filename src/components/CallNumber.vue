@@ -3,7 +3,7 @@
     <div class="container-Call">
 
         <p class="sale">По всем вопросам</p>
-        <p class="number-sale">+7 495 123-45-67</p>
+        <p class="number-sale">+7 979 027-57-12</p>
 
 
     </div>
