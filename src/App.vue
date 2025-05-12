@@ -65,6 +65,7 @@ nav a.router-link-exact-active{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   padding: 50px;
 
 
@@ -79,11 +80,13 @@ nav a.router-link-exact-active{
   font-size: 18px;
 }
 
-/* @media (max-width:730px) {
+@media (max-width:730px) {
   .container-header{
-    display:none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
-} */
+}
 
 
 </style>
